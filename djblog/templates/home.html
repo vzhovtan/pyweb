@@ -1,0 +1,16 @@
+<head>
+    <title>Django blog</title>
+</head>
+<body>
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+</body>
